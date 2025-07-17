@@ -34,16 +34,18 @@
 
 ### 1. Clone โปรเจกต์
 
-```bash
 git clone https://github.com/kzVerif/Disc-Pub.git
 cd Disc-Pub
-2. ติดตั้ง Dependencies
+
+### 2. ติดตั้ง Dependencies
 npm install
-3. สร้างไฟล์ .env
+
+### 3. สร้างไฟล์ .env
 สร้างไฟล์ชื่อ .env แล้วใส่ข้อมูลต่อไปนี้:
 DISCORD_TOKEN=ใส่โทเคนจาก Discord Developer Portal
 CLIENT_ID=Client ID ของแอป Discord ของคุณ
 GUILD_ID=ไอดีเซิร์ฟเวอร์ Discord (เฉพาะเซิร์ฟเวอร์ที่ใช้ทดสอบ)
 API_KEY=PUBG API Key ที่สมัครจาก https://developer.pubg.com/
-4. รันบอท
-node index.js ```
+
+### 4. รันบอท
+node index.js
