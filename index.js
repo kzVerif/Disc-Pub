@@ -10,7 +10,10 @@ const {
   createNotFoundEmbed,
 } = require("./utils/embeds/lookup");
 const { getRankStats } = require("./utils/pubg_api/getrankstat");
-const { createPUBGStatsEmbed, createRankedStatsEmbed } = require("./utils/embeds/lookuprank");
+const {
+  createPUBGStatsEmbed,
+  createRankedStatsEmbed,
+} = require("./utils/embeds/lookuprank");
 require("dotenv").config();
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -20,13 +23,9 @@ const rest = new REST({ version: 10 }).setToken(process.env.DISCORD_TOKEN);
 (async () => {
   try {
     console.log("Loading Commands...");
-    await rest.put(
-      Routes.applicationGuildCommands(
-        process.env.CLIENT_ID,
-        process.env.GUILD_ID
-      ),
-      { body: allCommands }
-    );
+    await rest.put(Routes.applicationCommands(process.env.CLIENT_ID), {
+      body: allCommands,
+    });
     console.log("Success Loading Commands!!");
   } catch (error) {
     console.error("Cannot loading Commands", error);
@@ -177,7 +176,11 @@ client.on("interactionCreate", async (interaction) => {
         const season_rank = interaction.options.getInteger("seasons");
         const gameMode_rank = interaction.options.getString("mode");
         try {
-          const result = await getRankStats(discord_id, season_rank, gameMode_rank);
+          const result = await getRankStats(
+            discord_id,
+            season_rank,
+            gameMode_rank
+          );
 
           if (result.status === "failed") {
             if (result.message === "User not found") {
@@ -198,7 +201,11 @@ client.on("interactionCreate", async (interaction) => {
             username: interaction.user.username,
           };
 
-          const embed = createRankedStatsEmbed(playerData, allStats, gameMode_rank);
+          const embed = createRankedStatsEmbed(
+            playerData,
+            allStats,
+            gameMode_rank
+          );
           await interaction.editReply({ embeds: [embed], flags: 64 });
         } catch (error) {
           console.error("Error in stats command:", error);
