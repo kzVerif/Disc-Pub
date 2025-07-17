@@ -42,8 +42,8 @@ npm install
 
 ### 3. สร้างไฟล์ .env
 สร้างไฟล์ชื่อ .env แล้วใส่ข้อมูลต่อไปนี้:
-DISCORD_TOKEN=ใส่โทเคนจาก Discord Developer Portal \n
-CLIENT_ID=Client ID ของแอป Discord ของคุณ \n
+DISCORD_TOKEN=ใส่โทเคนจาก Discord Developer Portal
+CLIENT_ID=Client ID ของแอป Discord ของคุณ 
 API_KEY=PUBG API Key ที่สมัครจาก https://developer.pubg.com/
 
 ### 4. รันบอท
