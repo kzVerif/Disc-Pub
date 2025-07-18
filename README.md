@@ -51,5 +51,24 @@ API_KEY = PUBG API Key ที่สมัครจาก https://developer.pubg.
 
 ---
 
+### วิธีการสร้าง Application Bot ของ Discord 
+1.ไปที่ [https://discord.com/developers/applications](https://discord.com/developers/applications)
+2.Click ที่ New Application ตั้งชื่อให้เรียบร้อย
+3.Click ที่ Oauth2 แล้ว Copy Client ID
+<img width="1911" height="929" alt="image" src="https://github.com/user-attachments/assets/c641cc5b-fb1f-499d-bc22-51bacce1277a" />
+4.เลื่อนลงมา กด Check ที่ คำว่าบอท ในส่วนของ Bot Permissions ให้เลือก Administartor
+<img width="1486" height="743" alt="image" src="https://github.com/user-attachments/assets/bffd3190-c248-4e13-acf5-4348c809400e" />
+<img width="1386" height="734" alt="image" src="https://github.com/user-attachments/assets/37239cf9-2c7c-4d35-b48c-51ee0c59f14f" />
+5.copy Generated URL เพื่อเอาบอทเข้าดิส
+<img width="1392" height="98" alt="image" src="https://github.com/user-attachments/assets/d14cb6cb-c618-4596-a287-744e06ae50e8" />
+6.Click ที่ Bot แล้วกด reset token เพื่อเอา token บอท
+<img width="1919" height="921" alt="image" src="https://github.com/user-attachments/assets/bac83318-1374-4acd-849e-6e9d5c71f1ad" />
+
+---
+
+
+
+
+
 
 
