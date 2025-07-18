@@ -23,7 +23,7 @@ const rest = new REST({ version: 10 }).setToken(process.env.DISCORD_TOKEN);
 (async () => {
   try {
     console.log("Loading Commands...");
-    await rest.put(Routes.applicationCommands(process.env.CLIENT_ID), {
+    await rest.put(Routes.applicationCommands(process.env.CLIENT_ID,process.env.GUILD_ID), {
       body: allCommands,
     });
     console.log("Success Loading Commands!!");
@@ -38,8 +38,9 @@ client.once("ready", () =>
 
 client.on("interactionCreate", async (interaction) => {
   const discord_id = interaction.user.id;
-  interaction.deferReply({ flags: 64 });
+  
   if (interaction.isChatInputCommand()) {
+    await interaction.deferReply({ flags: 64 });
     switch (interaction.commandName) {
       case "reg":
         const pubg_name = interaction.options.getString("pubg_name");
@@ -214,6 +215,10 @@ client.on("interactionCreate", async (interaction) => {
         }
         break;
       default:
+        await interaction.followUp({
+          content: "❌ คำสั่งที่ไม่รู้จัก กรุณาตรวจสอบคำสั่งที่ใช้งานได้",
+          flags: 64,
+        });
         break;
     }
   }
